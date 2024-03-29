@@ -1,32 +1,37 @@
 #!/usr/bin/python3
-"""Class that defines a square"""
+"""Python script that creates a class and functions for the class"""
 
 
 class Square:
-    """the class to define a square"""
+    """Class that defines a square with a private instance attribute size"""
+
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
+        """Getter and setter used to validate type and value of size"""
         return self.__size
 
     @size.setter
     def size(self, value):
-        if not isinstance(value, int):
-            raise ValueError('size must be an integer')
-        elif value < 0:
-            raise ValueError('size must be >= 0')
+        if isinstance(value, int):
+            if value >= 0:
+                self.__size = value
+            else:
+                raise ValueError("size must be >= 0")
         else:
-            self.__size = value
+            raise TypeError("size must be an integer")
 
     @property
     def position(self):
+        """Getter and setter used to validate type and value of position"""
         return self.__position
 
     @position.setter
     def position(self, value):
+        err = "position must be a tuple of 2 positive integers"
         if (
             isinstance(value, tuple)
             and len(value) == 2
@@ -37,17 +42,20 @@ class Square:
         ):
             self.__position = value
         else:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError(err)
 
     def area(self):
-        return self.__size * self.__size
+        """Returns the area of the square"""
+        return int(self.__size) * int(self.__size)
 
     def my_print(self):
-        if self.__size == 0:
-            print('')
-        for i in range(self.__position[1]):
+        """Prints a square using '#'"""
+        if self.size == 0:
             print("")
-
-        for x in range(self.__size):
-            print(' ' * self.__position[0], end='')
-            print('#' * self.__size)
+            return
+        for j in range(self.__position[1]):
+            print("")
+        for i in range(self.size):
+            if self.__position[0] > 0:
+                print(" " * self.__position[0], end="")
+            print("#" * self.size)
