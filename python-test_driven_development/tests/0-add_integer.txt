@@ -56,4 +56,4 @@ Error if NaN
     >>> add_integer(NaN)
 	Traceback (most recent call last):
         	...
-	TypeError: cannot convert float NaN to integer
+	ValueError: cannot convert float NaN to integer
