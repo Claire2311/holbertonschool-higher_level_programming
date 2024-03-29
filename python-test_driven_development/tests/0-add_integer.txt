@@ -51,3 +51,9 @@ Error if a and b are not a float or integer
 	Traceback (most recent call last):
         	...
 	TypeError: b must be an integer
+
+Error if NaN
+    >>> add_integer(NaN)
+	Traceback (most recent call last):
+        	...
+	TypeError: cannot convert float NaN to integer
