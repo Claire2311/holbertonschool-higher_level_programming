@@ -13,12 +13,13 @@ class Square:
         return self.__size
 
     @size.setter
-    def size(self, size):
-        self.__size = size
-        if not isinstance(size, int):
+    def size(self, value):
+        if not isinstance(value, int):
             raise ValueError('size must be an integer')
-        elif size < 0:
+        elif value < 0:
             raise ValueError('size must be >= 0')
+        else:
+            self.__size = value
 
     @property
     def position(self):
@@ -26,9 +27,14 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if isinstance(value, tuple) and len(value) == 2 and \
-            isinstance(value[0], int) and isinstance(value[1], int) and \
-                value[0] >= 0 and value[1] >= 0:
+        if (
+            isinstance(value, tuple)
+            and len(value) == 2
+            and isinstance(value[0], int)
+            and value[0] >= 0
+            and isinstance(value[1], int)
+            and value[1] >= 0
+        ):
             self.__position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -39,7 +45,7 @@ class Square:
     def my_print(self):
         if self.__size == 0:
             print('')
-        for i in range(self.position[1]):
+        for i in range(self.__position[1]):
             print("")
 
         for x in range(self.__size):
