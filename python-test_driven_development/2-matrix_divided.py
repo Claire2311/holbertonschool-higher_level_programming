@@ -26,7 +26,7 @@ def matrix_divided(matrix, div):
     if not correct_input:
         raise TypeError(
             'matrix must be a matrix (list of lists)'
-            'of integers/floats'
+            ' of integers/floats'
             )
 
     for sublist in matrix:
