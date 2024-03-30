@@ -51,3 +51,9 @@ Missing one argument
 	Traceback (most recent call last):
         	...
 	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Test
+	>>> matrix_divided([1, [4, 5, 6, 7]], 2)
+	Traceback (most recent call last):
+        	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
