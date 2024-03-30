@@ -18,6 +18,7 @@ def matrix_divided(matrix, div):
     for sublist in matrix:
         if not isinstance(sublist, list):
             correct_input = False
+            break
         for elem in sublist:
             if not isinstance(elem, (int, float)):
                 correct_input = False
