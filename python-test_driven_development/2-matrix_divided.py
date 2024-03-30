@@ -16,14 +16,14 @@ def matrix_divided(matrix, div):
 
     if not isinstance(matrix, list):
         correct_input = False
-
-    for sublist in matrix:
-        if not isinstance(sublist, list):
-            correct_input = False
-            break
-        for elem in sublist:
-            if not isinstance(elem, (int, float)):
+    else:
+        for sublist in matrix:
+            if not isinstance(sublist, list):
                 correct_input = False
+                break
+            for elem in sublist:
+                if not isinstance(elem, (int, float)):
+                    correct_input = False
 
     if not correct_input:
         raise TypeError(
