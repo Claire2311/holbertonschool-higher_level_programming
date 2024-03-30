@@ -7,29 +7,19 @@ Import the module
 Now use it:
 
 Normal case
-	>>> text_indentation(1)
-	#
+	>>> text_indentation('Hello: World')
+	Hello:
+	<BLANKLINE>
+	World
 
-Size is not an integer
-	>>> text_indentation("test")
+Text is not a string
+	>>> text_indentation(42)
 	Traceback (most recent call last):
 	    	...
-	TypeError: size must be an integer
-
-Size is less than 0
-	>>> text_indentation(-1)
-	Traceback (most recent call last):
-	    	...
-	ValueError: size must be >= 0
-
-Size is a negative float
-	>>> text_indentation(-1.23)
-	Traceback (most recent call last):
-	    	...
-	TypeError: size must be an integer
+	TypeError: text must be a string
 
 Missing one required argument
 	>>> text_indentation()
 	Traceback (most recent call last):
 			...
-	TypeError: text_indentation() missing 1 required positional argument: 'size'
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
