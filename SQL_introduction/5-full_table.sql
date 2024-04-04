@@ -1,6 +1,3 @@
--- script that creates the database hbtn_0c_0
-DROP DATABASE IF EXISTS `first_table`;
+-- script that prints the following description of the table first_table
 
-CREATE TABLE first_table (
-    id INT NOT NULL, name VARCHAR(256)
-)
+SHOW CREATE TABLE first_table;
