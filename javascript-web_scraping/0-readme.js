@@ -1,10 +1,8 @@
 #!/usr/bin/node
-const request = require("request");
 
-const url = process.argv[2];
+const fs = require("fs");
 
-request(url, function (error, response, body) {
-  console.error("error:", error);
-  console.log("statusCode:", response && response.statusCode);
-  return body;
+fs.readFile(process.argv[2], "utf8", (err, data) => {
+  if (err) throw err;
+  return data;
 });
