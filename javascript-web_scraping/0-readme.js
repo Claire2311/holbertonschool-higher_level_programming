@@ -1,3 +1,4 @@
+#!/usr/bin/node
 const request = require("request");
 
 request(url, function (error, response, body) {
