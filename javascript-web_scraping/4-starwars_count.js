@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const request = require("request");
+const request = require('request');
 
 request(process.argv[2], function (err, res, body) {
   if (err) {
@@ -10,12 +10,12 @@ request(process.argv[2], function (err, res, body) {
 
   let numChar = 0;
 
-  for (i = 0; i < result.results.length; i++) {
-    for (j = 0; j < result.results[i].characters.length; j++) {
-      if (
-        result.results[i].characters[j] ===
-        "https://swapi-api.hbtn.io/api/people/18/"
-      ) {
+  let i = 0;
+  let j = 0;
+
+  for (i; i < result.results.length; i++) {
+    for (j; j < result.results[i].characters.length; j++) {
+      if (result.results[i].characters[j].includes(18)) {
         numChar += 1;
       }
     }
