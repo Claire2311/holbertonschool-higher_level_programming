@@ -10,7 +10,10 @@ request(process.argv[2], function (err, res, body) {
   const result = JSON.parse(body);
 
   const numCompletedTasks = [];
-  for (i = 0; i < result.length; i++) {
+
+  let i = 0;
+
+  for (i; i < result.length; i++) {
     if (result[i].completed) {
       numCompletedTasks.push(result[i].userId);
     }
